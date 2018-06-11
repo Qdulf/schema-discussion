@@ -23,7 +23,7 @@
                                 },
                                 "ReportType": {
                                     "type": "string",
-                                    "enum": ["Copyright"]
+                                    "enum": ["OpenService"]
                                 },
                                 "ServiceName": {
                                     "type": "string",
