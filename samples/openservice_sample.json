@@ -1,0 +1,22 @@
+{
+    "ReporterInfo": {
+        "ReporterOrg": "ExampleOrg",
+        "ReporterOrgDomain": "example.com",
+        "ReporterOrgEmail": "reports@example.com",
+        "ReporterContactEmail": "contact@example.com",
+        "ReporterContactName": "Mr. Example",
+        "ReporterContactPhone": "+ 01 000 1234567"
+    },
+    "Disclosure": true,
+    "Report": {
+        "ReportClass": "Vulnerability",
+        "ReportType": "OpenService",
+        "Date": "2018-02-05T14:17:10Z",
+        "SourceIp": "192.0.2.55",
+        "SourcePort": 9200,
+        "ServiceName": "elasticsearch",
+        "ServiceVersion": "1.7.4",
+        "Protocol": "tcp",
+        "Domain": "examplepage.openelastic.com"
+    }
+}

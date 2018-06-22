@@ -2,32 +2,61 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "XARF OPEN SERVICE",
     "description": "A format to report the detection of an open serice.",
-    "OpenService":{
-        "type": "object",
-        "properties": {
-            "ReportClass": {
-                "type": "string",
-                "enum": ["Content"]
-            },
-            "ServiceName": {
-                "type": "string",
-                "description": "name of the open service"
-            },
-            "Protocol": {
-                "type": "string",
-                "description": "protocol the service uses to communicate",
-                "optional": true,
-                "enum": [
-                    "tcp",
-                    "udp"
-                ]
-            },
-            "Domain": {
-                "type": "string",
-                "description": "domain of the service",
-                "format": "hostname",
-                "optional": true
+    "allOf": [
+        {
+            "$ref": "xarf_shared.schema.json#/XarfBase"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "Report": {
+                    "allOf": [
+                        {
+                            "$ref": "xarf_shared.schema.json#/IpBasedReport"
+                        },
+                        {
+                            "type": "object",
+                            "properties": {
+                                "ReportClass": {
+                                    "type": "string",
+                                    "enum": ["Vulnerability"]
+                                },
+                                "ReportType": {
+                                    "type": "string",
+                                    "enum": ["OpenService"]
+                                },
+                                "ServiceName": {
+                                    "type": "string",
+                                    "description": "name of the open service"
+                                },
+                                "Protocol": {
+                                    "type": "string",
+                                    "description": "protocol the service uses to communicate",
+                                    "optional": true,
+                                    "enum": [
+                                        "tcp",
+                                        "udp"
+                                    ]
+                                },
+                                "Domain": {
+                                    "type": "string",
+                                    "description": "domain of the service",
+                                    "format": "hostname",
+                                    "optional": true
+                                },
+                                "ServiceVersion": {
+                                    "type": "string",
+                                    "description": "version number of the service",
+                                    "optional": true
+                                }
+                            },
+                            "required": [
+                                "ReportClass", "ReportType", "ServiceName"
+                            ]
+                        }
+                    ]
+                }
             }
         }
-    }
+    ]
 }

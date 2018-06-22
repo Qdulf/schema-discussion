@@ -24,6 +24,9 @@
         },
         {
             "$ref": "copyright.schema.json"
+        },
+        {
+            "$ref": "openservice.schema.json"
         }
     ]
 }
